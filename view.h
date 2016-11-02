@@ -19,5 +19,7 @@ public:
 	void draw() override;
 	// Determine if any lines haven't been saved
 	bool saved();
+
+	
 };
 #endif
