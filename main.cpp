@@ -6,6 +6,8 @@
 #include <FL/Fl_Button.H>
 #include <FL/Fl_Text_Display.H>
 #include <FL/fl_ask.H>
+#include <Fl/Fl_PNG_Image.H>
+#include <Fl/Fl_JPEG_Image.H>
 
 #include <iostream>
 #include <string>
@@ -28,6 +30,10 @@ Fl_Menu_Bar *menubar;
 Fl_Box *box;
 Fl_Input *t1, *t2, *t3, *t4, *t5, *t6, *t7;
 View *view;
+//Fl_Box *pngbox;
+//Fl_PNG_Image *welpng;
+Fl_Box *jpgbox;
+Fl_JPEG_Image *weljpg;
 
 
 //
@@ -212,11 +218,22 @@ int main() {
 
 	// Create a window and box
 	win = new Fl_Window{ X, Y, "Robot Shoppe" };
-	box = new Fl_Box(100, 150, 300, 100, "Welcome to the\nRobot Shoppe!");
+	/*box = new Fl_Box(100, 150, 300, 100, "Welcome to the\nRobot Shoppe!");
 	box->box(FL_UP_BOX);
 	box->labelfont(FL_BOLD + FL_ITALIC);
 	box->labelsize(36);
 	box->labeltype(FL_SHADOW_LABEL);
+	*/
+
+	//upload welcome_screen image
+	/*pngbox = new Fl_Box(100, 150, 600, 500);
+	welpng = new Fl_PNG_Image("welcome_screen.png");
+	pngbox->image(welpng);
+	*/
+	jpgbox = new Fl_Box(150, 150, 300, 100);
+	weljpg = new Fl_JPEG_Image("welcome_screen.jpg");
+	jpgbox->image(weljpg);
+	
 
 	// Install menu bar
 	menubar = new Fl_Menu_Bar(0, 0, X, 30);
@@ -227,8 +244,6 @@ int main() {
 	win->callback(CloseCB, view);
 	// Enable resizing
 	win->resizable(*view);
-
-	
 
 
 	// Wrap it up and let FLTK do its thing
