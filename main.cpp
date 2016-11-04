@@ -211,8 +211,8 @@ Fl_Menu_Item menuitems[] = {
 //
 int main() {
 	Shoppe shoppe;
-	const int X = 640;
-	const int Y = 480;
+	const int X = 800;
+	const int Y = 600;
 	const int border = 10;
 
 
@@ -226,11 +226,13 @@ int main() {
 	*/
 
 	//upload welcome_screen image
+
 	/*pngbox = new Fl_Box(100, 150, 600, 500);
 	welpng = new Fl_PNG_Image("welcome_screen.png");
 	pngbox->image(welpng);
 	*/
-	jpgbox = new Fl_Box(150, 150, 300, 100);
+
+	jpgbox = new Fl_Box(250, 250, 300, 100);
 	weljpg = new Fl_JPEG_Image("welcome_screen.jpg");
 	jpgbox->image(weljpg);
 	
